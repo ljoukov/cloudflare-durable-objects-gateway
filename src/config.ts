@@ -5,10 +5,6 @@ export const NAMESPACES = {
 		binding: 'FAMILY_SPARK_CHAT_ROOMS',
 		description: 'Family Spark chat room Durable Objects'
 	},
-	'family-spark-family-accounts': {
-		binding: 'FAMILY_SPARK_FAMILY_ACCOUNTS',
-		description: 'Family Spark family account Durable Objects'
-	},
 	'test-objects': {
 		binding: 'TEST_OBJECTS',
 		description: 'Local integration-test Durable Objects'

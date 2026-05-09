@@ -12,11 +12,6 @@
 				"name": "FAMILY_SPARK_CHAT_ROOMS",
 				"class_name": "ChatRoomDurableObject",
 				"script_name": "family-spark"
-			},
-			{
-				"name": "FAMILY_SPARK_FAMILY_ACCOUNTS",
-				"class_name": "FamilyAccountDurableObject",
-				"script_name": "family-spark"
 			}
 		]
 	}

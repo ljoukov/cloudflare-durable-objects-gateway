@@ -37,7 +37,7 @@ If a specific Durable Object API supports explicit cleanup, call that object-spe
 
 ## Configuration
 
-`wrangler.jsonc` statically maps public namespace names to Durable Object bindings. Add one binding per external DO namespace.
+`wrangler.jsonc` statically maps public namespace names to Durable Object bindings. Add one binding per external DO namespace. The initial production binding exposes Family Spark chat rooms; add more namespaces after their owning Workers export the target Durable Object class.
 
 The deployed Worker needs a secret:
 
