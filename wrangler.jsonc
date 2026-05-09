@@ -1,0 +1,23 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "cloudflare-durable-objects-gateway",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-05-09",
+	"observability": {
+		"enabled": true
+	},
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "FAMILY_SPARK_CHAT_ROOMS",
+				"class_name": "ChatRoomDurableObject",
+				"script_name": "family-spark"
+			},
+			{
+				"name": "FAMILY_SPARK_FAMILY_ACCOUNTS",
+				"class_name": "FamilyAccountDurableObject",
+				"script_name": "family-spark"
+			}
+		]
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "cloudflare-durable-objects-gateway-test",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-05-09",
+	"vars": {
+		"GATEWAY_BEARER_TOKEN": "test-token"
+	},
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "TEST_OBJECTS",
+				"class_name": "TestDurableObject"
+			}
+		]
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_sqlite_classes": ["TestDurableObject"]
+		}
+	]
+}
