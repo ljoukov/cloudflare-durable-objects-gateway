@@ -40,12 +40,14 @@ function route(request: Request): RouteMatch | null {
 	};
 }
 
-function namespaceList(): Response {
+function namespaceList(env: Env): Response {
 	return json({
-		namespaces: Object.entries(NAMESPACES).map(([name, config]) => ({
-			name,
-			description: config.description
-		}))
+		namespaces: Object.entries(NAMESPACES)
+			.filter(([, config]) => Boolean(env[config.binding]))
+			.map(([name, config]) => ({
+				name,
+				description: config.description
+			}))
 	});
 }
 
@@ -87,7 +89,7 @@ export async function handleRequest(request: Request, env: Env): Promise<Respons
 
 	const url = new URL(request.url);
 	if (url.pathname === '/v1/namespaces' && request.method === 'GET') {
-		return withCors(namespaceList(), request);
+		return withCors(namespaceList(env), request);
 	}
 
 	const match = route(request);
